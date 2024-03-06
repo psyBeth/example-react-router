@@ -13,7 +13,6 @@ const PersonDetail = () => {
     const getPerson = () => {
     fetch(`https://reqres.in/api/users/${idx}`)
         .then((res) => {
-            //? error handling
             if(!res.ok) {
                 setError(true)
                 throw new Error("Something went wrong :(")
