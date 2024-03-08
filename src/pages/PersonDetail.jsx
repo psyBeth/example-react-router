@@ -9,10 +9,11 @@ const PersonDetail = () => {
     const navigate = useNavigate()
     const [person, setPerson] = useState([]);
     const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     
 
     const getPerson = () => {
+        setLoading(true);
     fetch(`https://reqres.in/api/users/${idx}`)
         .then((res) => {
             if(!res.ok) {
@@ -33,7 +34,7 @@ const PersonDetail = () => {
     }, []);
 
     console.log(loading);
-    
+
     if(loading) {
         return (
         <div className="text-center mt-4">
