@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NotFound from "./NotFound";
+import spinner from "../img/Spinner-2.gif"
 
 const PersonDetail = () => {
     const { idx } = useParams()
@@ -31,10 +32,16 @@ const PersonDetail = () => {
         getPerson();
     }, []);
 
-    console.log(person);
+    console.log(loading);
 
     if(error) {
         return <NotFound />
+    } else if(loading) {
+        return (
+        <div className="text-center mt-4">
+            <img src={spinner} alt="spinner" />
+        </div>
+        )
     } else {
         return (
         <div className="container text-center mt-4">
