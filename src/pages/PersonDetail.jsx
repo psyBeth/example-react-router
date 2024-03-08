@@ -33,15 +33,15 @@ const PersonDetail = () => {
     }, []);
 
     console.log(loading);
-
-    if(error) {
-        return <NotFound />
-    } else if(loading) {
+    
+    if(loading) {
         return (
         <div className="text-center mt-4">
             <img src={spinner} alt="spinner" />
         </div>
         )
+    } else if(error) {
+        return <NotFound />
     } else {
         return (
         <div className="container text-center mt-4">
