@@ -5,21 +5,26 @@ import NotFound from "./NotFound";
 
 const PersonDetail = () => {
     const { idx } = useParams()
-    const [person, setPerson] = useState([]);
     const navigate = useNavigate()
+    const [person, setPerson] = useState([]);
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(true);
     
 
     const getPerson = () => {
     fetch(`https://reqres.in/api/users/${idx}`)
         .then((res) => {
             if(!res.ok) {
+                setLoading(false)
                 setError(true)
                 throw new Error("Something went wrong :(")
             }
             return res.json()
         })    
-      .then((data) => setPerson(data.data))
+      .then((data) => {
+        setLoading(false)
+        setPerson(data.data)
+      })
       .catch((err) => console.log(err));
     };
     useEffect(() => {
