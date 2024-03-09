@@ -9,6 +9,8 @@ import Paths from "./pages/Paths";
 import PersonDetail from "./pages/PersonDetail";
 import FullStack from "./pages/Fullstack";
 import Aws from "./pages/Aws";
+import Frontend from "./pages/Frontend"
+import Backend from "./pages/Backend";
 
 function App() {
   return (
@@ -21,7 +23,10 @@ function App() {
       <Route path="/contact" element={<Contact />} />
 
       <Route path="paths" element={<Paths />}>
-        <Route path="fs" element={<FullStack />} />
+        <Route path="fs" element={<FullStack />}> 
+          <Route path="frontend" element={<Frontend />} />
+          <Route path="backend" element={<Backend />} />
+        </Route>
         <Route path="aws" element={<Aws />} />
       </Route>
       
