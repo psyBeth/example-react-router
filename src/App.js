@@ -28,6 +28,7 @@ function App() {
           <Route path="backend" element={<Backend />} />
         </Route>
         <Route path="aws" element={<Aws />} />
+        {/* <Route index path="" element={<Aws />} /> */} 
       </Route>
       
 
