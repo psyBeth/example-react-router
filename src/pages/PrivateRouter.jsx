@@ -1,9 +1,11 @@
-import React from 'react'
+import { Outlet, Navigate, Link } from "react-router-dom"
+import Login from "./Login"
 
 const PrivateRouter = () => {
-  return (
-    <div>PrivateRouter</div>
-  )
+  //? Context API, redux, localStorage
+  const isAuthenticated = false
+
+  return <div>{isAuthenticated ? <Outlet /> : <Navigate to="/login" />}</div>
 }
 
 export default PrivateRouter
