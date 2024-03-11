@@ -23,7 +23,7 @@ function App() {
 
     <Route path="/people" element={<PrivateRouter />}>
       <Route path="/people" element={<People />} />
-      <Route path="/people/:idx" element={<PersonDetail />} />
+      <Route path=":idx" element={<PersonDetail />} />
     </Route>
 
 

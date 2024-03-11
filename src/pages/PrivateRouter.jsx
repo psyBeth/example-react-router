@@ -3,7 +3,7 @@ import Login from "./Login"
 
 const PrivateRouter = () => {
   //? Context API, redux, localStorage
-  const isAuthenticated = false
+  const isAuthenticated = true
 
   return <div>{isAuthenticated ? <Outlet /> : <Navigate to="/login" />}</div>
 }
